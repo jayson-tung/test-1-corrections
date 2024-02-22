@@ -65,6 +65,9 @@ def dates_to_iso8601(dlist):
                                       date[-8:-6]]))
     return templist
 
-def sort_dates(dlist):    
-    return sorted(dlist)
-
+def sort_dates(dlist):   
+    temp = []
+    for i in range(len(dlist)):
+        temp.append((dates_to_iso8601(dlist)[i], dlist[i]))
+    sortedtemp = sorted(temp)
+    return [date[1] for date in sortedtemp]
